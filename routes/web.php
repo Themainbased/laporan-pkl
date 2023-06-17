@@ -13,6 +13,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -78,12 +79,14 @@ Route::group(['middleware' => ['role:admin|penulis']], function () {
         Route::get('/penulis/{id}/konfirmasi', [PenulisController::class, 'konfirmasi']);
         Route::get('/penulis/{id}/delete', [PenulisController::class, 'delete']);
         Route::post('/penulis/search', [PenulisController::class, 'index']);
-
+        
+    
         Route::resource('/pembaca', PembacaController::class);
         Route::post('/pembaca/search', [PembacaController::class, 'index']);
     });
 });
 
+Route::get('/penulispdf', [PdfController::class, 'penulispdf']);
 Route::get('/', [ArtikelController::class, 'index']);
 Route::get('/artikel-tentang', [ArtikelController::class, 'tentang']);
 Route::get('/{slug}', [ArtikelController::class, 'artikel']);
@@ -91,6 +94,7 @@ Route::get('/artikel-kategori/{slug}', [ArtikelController::class, 'kategori']);
 Route::get('/artikel-tag/{slug}', [ArtikelController::class, 'tag']);
 Route::get('/artikel-banner/{slug}', [ArtikelController::class, 'banner']);
 Route::get('/artikel-author/{id}', [ArtikelController::class, 'author']);
+
 
 Route::middleware(['role:pembaca'])->group(function () {
     Route::get('/like/{id}', [LikeController::class, 'like']);

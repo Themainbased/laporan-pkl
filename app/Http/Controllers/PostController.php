@@ -14,6 +14,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert; 
 
+
+
 class PostController extends Controller
 {
     public function __construct()
@@ -137,7 +139,7 @@ class PostController extends Controller
             'konten' => 'required',
             'kategori' => 'required',
             'tag' => 'required',
-        ]);
+        ]);-
 
         $data = [
             'judul' => $request->judul,

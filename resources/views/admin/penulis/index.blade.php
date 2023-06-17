@@ -8,7 +8,8 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Penulis</h1>
 
-    <a href="/penulis/create" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah penulis</a>
+    <a href="/penulis/create" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Tambah penulis</a>
+    <a href="/penulispdf" class="btn btn-outline-primary btn-sm">Cetak Laporan</a>
 
    @if ($penulis[0])
         {{-- table --}}

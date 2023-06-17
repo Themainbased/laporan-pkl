@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert; 
+use PDF;
 
 class PenulisController extends Controller
 {
@@ -79,6 +80,15 @@ class PenulisController extends Controller
 
         Alert::success('Sukses', 'Data berhasil ditambahkan');
         return redirect('/penulis');
+    }
+
+    public function penulis_pdf()
+    {
+    	$penulis = Users::all();
+ 
+    	$pdf = PDF::loadview('admin/penulis/penulis_pdf',['users'=>$penulis]);
+    	return $pdf->download('laporan-pegawai-pdf');
+      
     }
 
     /**

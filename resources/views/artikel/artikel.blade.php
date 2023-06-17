@@ -26,12 +26,8 @@
             <hr>
 
             <p class="card-text">{!!$artikel->konten!!}</p>
-{{-- 
-            <a href="/like/{{$artikel->id}}" class="text-danger"><i class="fas fa-heart"></i> {{$like}} Like</a> --}}
         </div>
     </div>
-
-    {{-- <div id="disqus_thread" class="mt-4"></div> --}}
     <script>
         /**
         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.

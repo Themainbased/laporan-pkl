@@ -15,7 +15,7 @@ class FooterSeeder extends Seeder
     public function run()
     {
         Footer::create([
-            'konten' => 'Diskominfo Dev'
+            'konten' => 'meiard'
         ]);
     }
 }
